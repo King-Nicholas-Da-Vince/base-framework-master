@@ -1,10 +1,12 @@
 package com.module.framework.http;
 
-public class ResultEntity<T> {
+public class ResultEntity<D, R> {
 
     private Integer code;
-    private T data;
+    private D data;
+    private R rows;
     private String msg;
+    private Integer total;
 
 
     public Integer getCode() {
@@ -15,11 +17,11 @@ public class ResultEntity<T> {
         this.code = code;
     }
 
-    public T getData() {
+    public D getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(D data) {
         this.data = data;
     }
 
@@ -29,6 +31,22 @@ public class ResultEntity<T> {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public R getRows() {
+        return rows;
+    }
+
+    public void setRows(R rows) {
+        this.rows = rows;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
     public boolean isOk(){
@@ -42,7 +60,9 @@ public class ResultEntity<T> {
         return "ResultEntity{" +
                 "code=" + code +
                 ", data=" + data +
+                ", rows=" + rows +
                 ", msg='" + msg + '\'' +
+                ", total=" + total +
                 '}';
     }
 }
